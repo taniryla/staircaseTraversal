@@ -53,6 +53,16 @@
 
 function staircaseTraversal(height, maxSteps) {
   // Write your code here.
+  let ways = [];
 
-  return -1;
+  // recursion to create current arrays
+  helper(0, maxSteps, current, ways);
+  // base case from the recursion stack
+  return ways;
+
+  function helper(idx, maxSteps, current, ways){
+    // iterate through each element
+    if (idx === height.length)
+    // 
+  }
 }
