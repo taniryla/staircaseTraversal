@@ -60,9 +60,14 @@ function staircaseTraversal(height, maxSteps) {
   // base case from the recursion stack
   return ways;
 
-  function helper(idx, maxSteps, current, ways){
-    // iterate through each element
-    if (idx === height.length)
-    // 
+  // if statement, create a current array using no maxSteps
+  if (current.idx === 0) {
+  }
+
+  function helper(idx, maxSteps, current, ways) {
+    // let minimum = height minus maxSteps, iterate up to (minimum == array.length)
+    // make current decemented until final
+    // final equals maxSteps + maxSteps
+    //
   }
 }
