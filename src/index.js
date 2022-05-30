@@ -53,6 +53,14 @@
 
 function staircaseTraversal(height, maxSteps) {
   // Write your code here.
+  if (height <= 1) return 1;
+
+  let ways = 0;
+  for (let i = 1; i < Math.min(maxSteps, height) {
+
+  
+  }
+  
   let ways = [];
   let current = [];
 
