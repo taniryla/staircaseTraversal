@@ -56,46 +56,45 @@ function staircaseTraversal(height, maxSteps) {
   if (height <= 1) return 1;
 
   let ways = 0;
-  for (let i = 1; i < Math.min(maxSteps, height) {
-
-  
+  for (let i = 1; i < Math.min(maxSteps, height) + 1; i++) {
+    ways += staircaseTraversal(height - i, maxSteps);
   }
-  
-  let ways = [];
-  let current = [];
 
-  // recursion to create current arrays
-  helper(0, maxSteps, current, ways);
-  // base case from the recursion stack
   return ways;
-
-  // if statement, create a current array using no maxSteps
-  if (current.idx === 0) {
-    for (let i = 0; i < current.length; i++) {
-      current.push(1);
-    }
-  }
-  
-  function helper(idx, maxSteps, current, ways) {
-    // base case: let minimum = height minus maxSteps, iterate up to (minimum == array.length)
-    if (current.idx < height && ways.length === 0) {
-      let minimum = 0;
-      for (let i = 0; i < current[minimum].length; i++) {
-        current.push(1);
-        minimum = height - maxSteps;
-      }
-      for (let i = 0; i < current[minimum].length; i++) {
-        current.push(1);
-      }
-      current.push(current[minimum]);  
-    }
-      ways.push(current);
-      current = [];
-      helper(idx + 1, maxSteps, current, ways);
-    }
-
-    // make current decemented until final
-    // final equals maxSteps + maxSteps
-    //
-  }
 }
+// let ways = [];
+// let current = [];
+
+// // recursion to create current arrays
+// helper(0, maxSteps, current, ways);
+// // base case from the recursion stack
+// return ways;
+
+// // if statement, create a current array using no maxSteps
+// if (current.idx === 0) {
+//   for (let i = 0; i < current.length; i++) {
+//     current.push(1);
+//   }
+// }
+
+// function helper(idx, maxSteps, current, ways) {
+//   // base case: let minimum = height minus maxSteps, iterate up to (minimum == array.length)
+//   if (current.idx < height && ways.length === 0) {
+//     let minimum = 0;
+//     for (let i = 0; i < current[minimum].length; i++) {
+//       current.push(1);
+//       minimum = height - maxSteps;
+//     }
+//     for (let i = 0; i < current[minimum].length; i++) {
+//       current.push(1);
+//     }
+//     current.push(current[minimum]);
+//   }
+//     ways.push(current);
+//     current = [];
+//     helper(idx + 1, maxSteps, current, ways);
+//   }
+
+// make current decemented until final
+// final equals maxSteps + maxSteps
+//
