@@ -54,6 +54,7 @@
 function staircaseTraversal(height, maxSteps) {
   // Write your code here.
   let ways = [];
+  let current = [];
 
   // recursion to create current arrays
   helper(0, maxSteps, current, ways);
@@ -62,10 +63,23 @@ function staircaseTraversal(height, maxSteps) {
 
   // if statement, create a current array using no maxSteps
   if (current.idx === 0) {
+    for (let i = 0; i < current.length; i++) {
+      current.push(1);
+    }
+    ways.push(current);
+    current = [];
   }
 
   function helper(idx, maxSteps, current, ways) {
     // let minimum = height minus maxSteps, iterate up to (minimum == array.length)
+    if (current.idx < height) {
+      let minimum = 0;
+      for (let i = 0; i < current[minimum].length; i++) {
+        current.push(1);
+      }
+      while (idx < minimum) minimum = height - maxSteps;
+    }
+
     // make current decemented until final
     // final equals maxSteps + maxSteps
     //
