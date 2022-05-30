@@ -106,4 +106,6 @@
 
 // make current decemented until final
 // final equals maxSteps + maxSteps
-//
+
+// sliding window approach
+function staircaseTraversal(height, maxSteps) {}
