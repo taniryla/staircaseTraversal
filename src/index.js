@@ -53,7 +53,11 @@
 
 function staircaseTraversal(height, maxSteps) {
   // Write your code here.
-  if (height <= 1) return 1;
+  return helper(height, maxSteps, { 0: 1, 1: 1 });
+}
+
+function helper(height, maxSteps, memoize) {
+  if (height in memoize) return memoize[height];
 
   let ways = 0;
   for (let i = 1; i < Math.min(maxSteps, height) + 1; i++) {
