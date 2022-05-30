@@ -66,18 +66,24 @@ function staircaseTraversal(height, maxSteps) {
     for (let i = 0; i < current.length; i++) {
       current.push(1);
     }
-    ways.push(current);
-    current = [];
   }
-
+  
   function helper(idx, maxSteps, current, ways) {
-    // let minimum = height minus maxSteps, iterate up to (minimum == array.length)
-    if (current.idx < height) {
+    // base case: let minimum = height minus maxSteps, iterate up to (minimum == array.length)
+    if (current.idx < height && ways.length === 0) {
       let minimum = 0;
       for (let i = 0; i < current[minimum].length; i++) {
         current.push(1);
+        minimum = height - maxSteps;
       }
-      while (idx < minimum) minimum = height - maxSteps;
+      for (let i = 0; i < current[minimum].length; i++) {
+        current.push(1);
+      }
+      current.push(current[minimum]);  
+    }
+      ways.push(current);
+      current = [];
+      helper(idx + 1, maxSteps, current, ways);
     }
 
     // make current decemented until final
