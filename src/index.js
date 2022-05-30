@@ -46,28 +46,31 @@
 // 15.  Can you check your result?
 // 16.  Can you check the argument?
 // 17.  Can you derive the result differently?
+// yes can add memoizing to cache or use dynamic programming
+
 // 18.  Can you see it at a glance?
 // 19ß.  Can you make the code DRYer and refactor?
 // 20.  Can you improve the performance?
+// yes using sliding window
 // 21.   How have other people solved this problem?
 
-function staircaseTraversal(height, maxSteps) {
-  // Write your code here.
-  return helper(height, maxSteps, { 0: 1, 1: 1 });
-}
+// function staircaseTraversal(height, maxSteps) {
+//   // Write your code here.
+//   return helper(height, maxSteps, { 0: 1, 1: 1 });
+// }
 
-function helper(height, maxSteps, memoize) {
-  if (height in memoize) return memoize[height];
+// function helper(height, maxSteps, memoize) {
+//   if (height in memoize) return memoize[height];
 
-  let ways = 0;
-  for (let i = 1; i < Math.min(maxSteps, height) + 1; i++) {
-    ways += staircaseTraversal(height - i, maxSteps);
-  }
+//   let ways = 0;
+//   for (let i = 1; i < Math.min(maxSteps, height) + 1; i++) {
+//     ways += staircaseTraversal(height - i, maxSteps);
+//   }
 
-  memoize[height] = ways;
+//   memoize[height] = ways;
 
-  return ways;
-}
+//   return ways;
+// }
 // let ways = [];
 // let current = [];
 
