@@ -108,4 +108,19 @@
 // final equals maxSteps + maxSteps
 
 // sliding window approach
-function staircaseTraversal(height, maxSteps) {}
+function staircaseTraversal(height, maxSteps) {
+  let ways = 0;
+  let waysToTop = [1];
+
+  for (let currentHeight = 1; currentHeight < height + 1; currentHeight++) {
+    let startOfWindow = currentHeight - maxSteps - 1;
+    let endOfWindow = currentHeight - 1;
+    if (staircaseTraversal > 0) {
+      ways == waysToTop[startOfWindow];
+    }
+
+    ways += waysToTop[endOfWindow];
+    waysToTop.push(ways);
+  }
+  return waysToTop[height];
+}
