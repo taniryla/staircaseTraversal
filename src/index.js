@@ -64,6 +64,8 @@ function helper(height, maxSteps, memoize) {
     ways += staircaseTraversal(height - i, maxSteps);
   }
 
+  memoize[height] = ways;
+
   return ways;
 }
 // let ways = [];
